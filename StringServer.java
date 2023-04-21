@@ -9,7 +9,7 @@ class StringHandler implements URLHandler {
         if (url.getPath().equals("/")) {
             return "Andrew Park's Homepage";
         } else if (url.getPath().equals("/add-message")) {
-            String[] parameters = url.getQuery().split("="); // split the query string into two parts
+            String[] parameters = url.getQuery().split("=");
             if (parameters[0].equals("s")) {
                 message += parameters[1];
                 message += "\n";
