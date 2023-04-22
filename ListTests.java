@@ -13,10 +13,16 @@ public class ListTests {
         list2.add("d");
         ArrayList<String> expected = new ArrayList<String>(Arrays.asList("a", "b", "b", "c", "c", "d", "d"));
         assertEquals(expected, ListExamples.merge(list1, list2));
+    }
 
+    @Test
+    public void testMerge2() {
         ArrayList<String> list3 = new ArrayList<String>(Arrays.asList("a", "b"));
-        ArrayList<String> list4 = new ArrayList<String>(Arrays.asList("c", "b", "a"));
-        ArrayList<String> expected2 = new ArrayList<String>(Arrays.asList("a", "a", "b", "b", "c"));
+        ArrayList<String> list4 = new ArrayList<String>();
+        list4.add("a");
+        list4.add("b");
+        list4.add("a");
+        ArrayList<String> expected2 = new ArrayList<String>(Arrays.asList("a", "a", "a", "b", "b"));
         assertEquals(expected2, ListExamples.merge(list3, list4));
     }
 
