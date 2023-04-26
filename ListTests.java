@@ -17,13 +17,23 @@ public class ListTests {
 
     @Test
     public void testMerge2() {
-        ArrayList<String> list3 = new ArrayList<String>(Arrays.asList("a", "b"));
+        ArrayList<String> list3 = new ArrayList<String>(Arrays.asList("a", "b", "c"));
         ArrayList<String> list4 = new ArrayList<String>();
         list4.add("a");
         list4.add("b");
-        list4.add("a");
-        ArrayList<String> expected2 = new ArrayList<String>(Arrays.asList("a", "a", "a", "b", "b"));
+        list4.add("c");
+        ArrayList<String> expected2 = new ArrayList<String>(Arrays.asList("a", "a", "b", "b", "c", "c"));
         assertEquals(expected2, ListExamples.merge(list3, list4));
+    }
+
+    @Test
+    public void testMerge3() {
+        ArrayList<String> list3 = new ArrayList<String>(Arrays.asList("a", "b"));
+        ArrayList<String> list5 = new ArrayList<String>();
+        list5.add("d");
+        list5.add("e");
+        ArrayList<String> expected3 = new ArrayList<String>(Arrays.asList("a", "b", "d", "e"));
+        assertEquals(expected3, ListExamples.merge(list3, list5));
     }
 
     @Test
